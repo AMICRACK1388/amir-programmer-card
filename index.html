@@ -1,162 +1,463 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>AMIRREZA | PROGRAMMER</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
+    <title>AMIRREZA | PROGRAMMER</title>
 
-    body {
-        height: 100vh;
-        background: #050505;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
+    <style>
 
-    body::before {
-        content: "";
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        background: #222;
-        filter: blur(180px);
-        border-radius: 50%;
-        opacity: 0.5;
-    }
-
-    .card {
-        position: relative;
-        width: 90%;
-        max-width: 400px;
-        padding: 45px 25px;
-        text-align: center;
-
-        background: rgba(15,15,15,0.85);
-        border: 1px solid #333;
-        border-radius: 25px;
-
-        box-shadow:
-            0 0 20px rgba(255,255,255,0.05),
-            0 20px 60px rgba(0,0,0,0.8);
-
-        animation: show 1s ease;
-    }
-
-    .line {
-        width: 60px;
-        height: 3px;
-        background: white;
-        margin: 20px auto;
-        border-radius: 10px;
-    }
-
-    h1 {
-        font-size: 42px;
-        letter-spacing: 8px;
-    }
-
-    h2 {
-        font-size: 14px;
-        font-weight: normal;
-        letter-spacing: 6px;
-        color: #888;
-        margin-top: 12px;
-    }
-
-    .tap {
-        margin-top: 35px;
-        color: #777;
-        font-size: 12px;
-        letter-spacing: 3px;
-    }
-
-    .phone {
-        margin-top: 25px;
-        color: #aaa;
-        font-size: 18px;
-        letter-spacing: 2px;
-    }
-
-    .call {
-        display: block;
-        margin-top: 30px;
-        padding: 16px;
-
-        border-radius: 15px;
-
-        background: white;
-        color: black;
-
-        text-decoration: none;
-        font-weight: bold;
-        letter-spacing: 2px;
-
-        transition: 0.3s;
-    }
-
-    .call:hover {
-        transform: scale(1.04);
-        background: #ddd;
-    }
-
-    .bottom {
-        margin-top: 30px;
-        font-size: 10px;
-        color: #444;
-        letter-spacing: 3px;
-    }
-
-    @keyframes show {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
-        to {
-            opacity: 1;
-            transform: translateY(0);
+        body {
+            min-height: 100vh;
+            background: #050505;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow-x: hidden;
         }
-    }
-</style>
+
+        /* Background glow */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            background: #252525;
+
+            filter: blur(180px);
+
+            border-radius: 50%;
+
+            opacity: 0.4;
+
+            animation: glow 6s infinite alternate;
+        }
+
+
+        @keyframes glow {
+
+            from {
+                transform: translate(-100px, -100px);
+            }
+
+            to {
+                transform: translate(100px, 100px);
+            }
+
+        }
+
+
+        .card {
+
+            position: relative;
+
+            width: 90%;
+            max-width: 420px;
+
+            padding: 45px 25px;
+
+            text-align: center;
+
+            background: rgba(15, 15, 15, 0.92);
+
+            border: 1px solid #2d2d2d;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 0 25px rgba(255,255,255,0.04),
+                0 25px 80px rgba(0,0,0,0.9);
+
+            animation: show 1s ease;
+
+        }
+
+
+        @keyframes show {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* Name */
+
+        h1 {
+
+            font-size: 42px;
+
+            letter-spacing: 8px;
+
+            font-weight: bold;
+
+        }
+
+
+        .line {
+
+            width: 60px;
+
+            height: 3px;
+
+            background: white;
+
+            margin: 20px auto;
+
+            border-radius: 20px;
+
+        }
+
+
+        h2 {
+
+            font-size: 13px;
+
+            font-weight: normal;
+
+            letter-spacing: 6px;
+
+            color: #888;
+
+        }
+
+
+        /* Digital text */
+
+        .digital {
+
+            margin-top: 28px;
+
+            color: #666;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        /* Phone */
+
+        .phone {
+
+            margin-top: 25px;
+
+            color: #aaa;
+
+            font-size: 18px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        /* Main call button */
+
+        .call {
+
+            display: block;
+
+            margin-top: 25px;
+
+            padding: 16px;
+
+            border-radius: 14px;
+
+            background: white;
+
+            color: black;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            transition: 0.25s;
+
+        }
+
+
+        .call:hover {
+
+            transform: scale(1.03);
+
+            background: #ddd;
+
+        }
+
+
+        /* Social buttons */
+
+        .socials {
+
+            margin-top: 25px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 12px;
+
+        }
+
+
+        .social {
+
+            padding: 14px 8px;
+
+            border-radius: 13px;
+
+            border: 1px solid #303030;
+
+            background: #151515;
+
+            color: #ddd;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            transition: 0.25s;
+
+        }
+
+
+        .social:hover {
+
+            background: white;
+
+            color: black;
+
+            transform: translateY(-3px);
+
+        }
+
+
+        /* Copy button */
+
+        .copy {
+
+            width: 100%;
+
+            margin-top: 14px;
+
+            padding: 14px;
+
+            border-radius: 13px;
+
+            border: 1px solid #303030;
+
+            background: transparent;
+
+            color: #aaa;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            transition: 0.25s;
+
+        }
+
+
+        .copy:hover {
+
+            background: #1c1c1c;
+
+            color: white;
+
+        }
+
+
+        /* Bottom text */
+
+        .bottom {
+
+            margin-top: 30px;
+
+            font-size: 9px;
+
+            color: #444;
+
+            letter-spacing: 3px;
+
+        }
+
+
+    </style>
 
 </head>
 
+
 <body>
+
 
 <div class="card">
 
-<h1>AMIR</h1>
 
-<div class="line"></div>
+    <h1>AMIR</h1>
 
-<h2>PROGRAMMER</h2>
 
-<p class="tap">DON'T ASK. JUST TAP.</p>
+    <div class="line"></div>
 
-<p class="phone">0914 232 0522</p>
 
-<a class="call" href="tel:+989142320522">
-    CALL ME 📞
-</a>
+    <h2>PROGRAMMER</h2>
 
-<p class="bottom">
-    NFC DIGITAL CARD
-</p>
+
+    <p class="digital">
+
+        DIGITAL IDENTITY • NFC CARD
+
+    </p>
+
+
+    <p class="phone">
+
+        0914 232 0522
+
+    </p>
+
+
+    <!-- CALL -->
+
+    <a class="call"
+       href="tel:+989142320522">
+
+        📞 CALL ME
+
+    </a>
+
+
+    <!-- SOCIAL MEDIA -->
+
+    <div class="socials">
+
+
+        <!-- Telegram -->
+
+        <a class="social"
+           href="https://t.me/KaNikAs312"
+           target="_blank">
+
+            ✈ TELEGRAM
+
+        </a>
+
+
+        <!-- Instagram -->
+
+        <a class="social"
+           href="https://instagram.com/4311amirreza"
+           target="_blank">
+
+            📸 INSTAGRAM
+
+        </a>
+
+
+        <!-- Rubika -->
+
+        <a class="social"
+           href="https://rubika.ir/paul_aterides"
+           target="_blank">
+
+            💬 RUBIKA
+
+        </a>
+
+
+        <!-- Shad -->
+
+        <a class="social"
+           href="https://shad.ir/Hajmohseni_01"
+           target="_blank">
+
+            🟢 SHAD
+
+        </a>
+
+
+    </div>
+
+
+    <!-- COPY NUMBER -->
+
+    <button class="copy"
+            onclick="copyNumber()">
+
+        📋 COPY NUMBER
+
+    </button>
+
+
+    <p class="bottom">
+
+        ACCESS GRANTED ✓
+
+    </p>
+
+
 </div>
 
+
+<script>
+
+function copyNumber() {
+
+    navigator.clipboard.writeText("09142320522");
+
+    const button =
+        document.querySelector(".copy");
+
+    button.innerText =
+        "✓ NUMBER COPIED";
+
+    setTimeout(() => {
+
+        button.innerText =
+            "📋 COPY NUMBER";
+
+    }, 2000);
+
+}
+
+</script>
+
+
 </body>
+
 </html>
 
 
