@@ -1,1 +1,0 @@
-# amir-programmer-card
